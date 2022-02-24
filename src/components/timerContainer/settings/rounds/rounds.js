@@ -1,6 +1,7 @@
 import {useSelector, useDispatch} from 'react-redux';
 import {typeRounds} from '../../../../actions/index';
 import TextField from '@mui/material/TextField';
+import { Typography } from '@mui/material';
 import './rounds.css';
 
 function Rounds() {
@@ -16,7 +17,7 @@ function Rounds() {
   }
     return (
       <div className="Rounds">
-        <h2>rounds</h2>
+        <Typography variant="h4">rounds</Typography>
         <TextField 
           type="number" 
           id="roundInput" 

@@ -1,9 +1,9 @@
-const currentPhase = (state='Work', action) => {
+const currentPhase = (state='work', action) => {
     switch(action.type){
         case 'change to rest':
-            return 'Rest'
+            return 'rest'
         case 'change to work':
-            return 'Work'
+            return 'work'
         default:
             return state
     }

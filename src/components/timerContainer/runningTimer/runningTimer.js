@@ -1,6 +1,7 @@
 import {useSelector} from 'react-redux';
 import Checkbox from '@mui/material/Checkbox';
 import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
 import './runningTimer.css';
 
 function RunningTimer() {
@@ -10,20 +11,16 @@ function RunningTimer() {
   const theme = useSelector(state => state.theme);
  
     return (
-      <Paper className="RunningTimer" elevation={10}>
-   
-          <h2 id="roundTag" elevation={24}>Round: 1</h2>
-          <h2 id="currentPhaseTag" elevation={24}>{currentPhase}ing...</h2>
-          <h2 id="runningTimerOutput" elevation={24}>{`${workTimer}:00`}</h2>
-     
-        
-        <div id="checkBoxes">
-          <div>
-            <Checkbox name="disableAlarm" id="alarmCheckbox"/>
-              <label htmlFor="disableAlarm">mute alarm</label>
+      <Paper className="RunningTimer" elevation={24}>
+          <div id="timers">
+            <Typography className="timerOutputs" id="roundTag" variant="h3">round 1</Typography>
+            <Typography className="timerOutputs" id="runningTimerOutput" variant="h1">{`${workTimer}:00`}</Typography>
+            <Typography className="timerOutputs" id="currentPhaseTag" variant="h3">{currentPhase}ing...</Typography>
           </div>
-          
-        </div>
+          <div id="checkBoxes">
+            <Checkbox name="disableAlarm" id="alarmCheckbox"/>
+              <Typography htmlFor="disableAlarm">mute</Typography>
+          </div>
       </Paper>
     );
   }

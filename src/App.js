@@ -27,7 +27,7 @@ function App() {
       return 'purple'; //purple
     }
     else if(theme==='dark'){
-      return '#121212'; //black
+      return '#212121'; //black
     }
     else if(theme==='christmas'){
       return '#388e3c'; //green

@@ -1,9 +1,26 @@
 .RunningTimer{
     display:flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    width:70%;
+    width:80%;
+    min-width:660px;
     height:100%;
     margin:2%;
+    padding-top:2%;
+}
+#timers{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width:100%;
+}
+#checkBoxes{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.timerOutputs{
+    padding-top:2.5%;
 }

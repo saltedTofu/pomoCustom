@@ -1,6 +1,8 @@
 import {useSelector, useDispatch} from 'react-redux';
 import {typeWork} from '../../../../actions/index';
 import TextField from '@mui/material/TextField';
+import { Typography } from '@mui/material';
+import Input from '@mui/material/Input';
 import './workTimer.css';
 
 function WorkTimer() {
@@ -16,8 +18,8 @@ function WorkTimer() {
   }
     return (
       <div className="WorkTimer">
-        <h2>work</h2>
-        <TextField 
+        <Typography variant="h4">work</Typography>
+        <TextField
           type="number" 
           id="workInput" 
           value={timer} 

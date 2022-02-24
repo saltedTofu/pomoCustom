@@ -34,8 +34,8 @@ function StartButton() {
     startWorkTimer(totalSeconds, roundsLeft);
   }
   const startWorkTimer = (totalSeconds,roundsLeft) => {
-    document.getElementById('roundTag').innerHTML=`Round: ${rounds-roundsLeft+1}`;
-    document.getElementById('currentPhaseTag').innerHTML='Working...';
+    document.getElementById('roundTag').innerHTML=`round ${rounds-roundsLeft+1}`;
+    document.getElementById('currentPhaseTag').innerHTML='working...';
     let minutesOutput = Math.floor(totalSeconds/60);
     let secondsOutput = totalSeconds%60;
     if(secondsOutput<10){
@@ -106,7 +106,7 @@ function StartButton() {
       }
     }
     document.getElementById("runningTimerOutput").innerHTML = outputString;
-    document.getElementById('currentPhaseTag').innerHTML='Resting...';
+    document.getElementById('currentPhaseTag').innerHTML='resting...';
     return new Promise((resolve) => {
       setTimeout(resolve, 1000);
     })
@@ -117,8 +117,8 @@ function StartButton() {
         }
         dispatch(changeToWork());
         if(roundsLeft===1){
-          document.title='Timer Done';
-          document.getElementById("runningTimerOutput").innerHTML ='Timer Done';
+          document.title='finished!';
+          document.getElementById("runningTimerOutput").innerHTML ='finished!';
           document.getElementById('roundTag').innerHTML='';
           document.getElementById('currentPhaseTag').innerHTML='';
           document.getElementById("startButton").disabled = false;

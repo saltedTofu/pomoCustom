@@ -1,6 +1,7 @@
 import {useSelector, useDispatch} from 'react-redux';
 import {typeRest} from '../../../../actions/index';
 import TextField from '@mui/material/TextField';
+import { Typography } from '@mui/material';
 import './restTimer.css';
 
 function RestTimer() {
@@ -17,7 +18,7 @@ function RestTimer() {
 
     return (
       <div className="RestTimer">
-        <h2>rest</h2>
+        <Typography variant="h4">rest</Typography>
         <TextField 
           type="number" 
           id="restInput" 
