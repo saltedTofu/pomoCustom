@@ -1,0 +1,9 @@
+.RunningTimer{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width:70%;
+    height:100%;
+    margin:2%;
+}

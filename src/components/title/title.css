@@ -1,0 +1,9 @@
+#themeButtons{
+    padding:1%;
+}
+.Title{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

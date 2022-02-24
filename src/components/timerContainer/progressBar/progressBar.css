@@ -1,0 +1,17 @@
+.ProgressBar{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    padding:2.5%;
+}
+#outerProgressBar{
+    width:60%;
+    border: 1px solid black;
+    height:50px;
+}
+#innerProgressBar{
+    background-color:#ffffff;
+    height:50px;
+}

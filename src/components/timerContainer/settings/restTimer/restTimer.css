@@ -1,0 +1,13 @@
+#restInput{
+    height:100px;
+    width:100px;
+    font-size:4em;
+    text-align: center;
+}
+.RestTimer{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    width:30%;
+}
