@@ -12,6 +12,12 @@ export const incrementPercent = (number) => {
         payload:number
     }
 }
+//reset percent complete
+export const resetPercent = () => {
+    return{
+        type:'reset percent',
+    }
+}
 //change phases
 export const changeToWork = () => {
     return{

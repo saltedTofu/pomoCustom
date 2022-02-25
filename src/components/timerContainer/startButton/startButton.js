@@ -1,6 +1,6 @@
 import {useSelector, useDispatch} from 'react-redux';
 import {useState} from 'react';
-import {changeToWork,changeToRest,incrementPercent} from '../../../actions/index';
+import {changeToWork,changeToRest,incrementPercent,resetPercent} from '../../../actions/index';
 import alarmSound from '../../../utils/alarm.wav';
 import Button from '@mui/material/Button';
 import './startButton.css';
@@ -8,7 +8,7 @@ import './startButton.css';
 let ding = new Audio(alarmSound);
 
 
-function StartButton() {
+function StartButton() { 
   let percentCompletePerSecond = 0;
   const workTimer = useSelector(state => state.workTimer);
   const restTimer = useSelector(state => state.restTimer);
@@ -23,6 +23,7 @@ function StartButton() {
     percentCompletePerSecond = (1/totalTime)*100;
   }
   const startPomodoro = (totalSeconds, roundsLeft) => {
+    dispatch(resetPercent());
     document.getElementById("startButton").disabled = true;
     calculatePercentComplete();
     startWorkTimer(totalSeconds, roundsLeft);

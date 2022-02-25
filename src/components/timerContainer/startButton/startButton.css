@@ -1,10 +1,13 @@
 .StartButton{
-    padding:2%;
-}
-.StartButton{
     display:flex;
     flex-direction: row;
     justify-content: space-around;
-    width:20%;
+    width:fit-content;
     margin-top:2%;
+}
+#startButton{
+    margin-right:5%;
+}
+#stopButton{
+    margin-left:5%;
 }
