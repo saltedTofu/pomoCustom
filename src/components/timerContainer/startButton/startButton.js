@@ -1,4 +1,5 @@
 import {useSelector, useDispatch} from 'react-redux';
+import {useState} from 'react';
 import {changeToWork,changeToRest,incrementPercent} from '../../../actions/index';
 import alarmSound from '../../../utils/alarm.wav';
 import Button from '@mui/material/Button';
@@ -6,34 +7,29 @@ import './startButton.css';
 
 let ding = new Audio(alarmSound);
 
+
 function StartButton() {
+  let percentCompletePerSecond = 0;
   const workTimer = useSelector(state => state.workTimer);
   const restTimer = useSelector(state => state.restTimer);
   const rounds = useSelector(state => state.rounds);
   const theme = useSelector(state => state.theme);
-
   const dispatch = useDispatch();
 
-  const handleProgressBar = (workTimer,restTimer,rounds,repeats=100) => {
-    if(repeats===0){
-      return;
-    }
-    let totalTimeMS = ((workTimer+restTimer)*60) * (rounds * 1000);
-    let incrementInterval = totalTimeMS/100;
-    return new Promise((resolve) => {
-      setTimeout(resolve, incrementInterval);
-    })
-    .then(()=>{
-      dispatch(incrementPercent());
-      handleProgressBar(workTimer,restTimer,rounds,repeats-1);
-    })
+  const calculatePercentComplete = () => {
+    let totalTime = ((workTimer*60) + (restTimer*60))*rounds;
+    console.log(totalTime);
+    console.log((1/totalTime)*100);
+    percentCompletePerSecond = (1/totalTime)*100;
   }
-
   const startPomodoro = (totalSeconds, roundsLeft) => {
     document.getElementById("startButton").disabled = true;
+    calculatePercentComplete();
     startWorkTimer(totalSeconds, roundsLeft);
   }
   const startWorkTimer = (totalSeconds,roundsLeft) => {
+    dispatch(incrementPercent(percentCompletePerSecond));
+    console.log(percentCompletePerSecond);
     document.getElementById('roundTag').innerHTML=`round ${rounds-roundsLeft+1}`;
     document.getElementById('currentPhaseTag').innerHTML='working...';
     let minutesOutput = Math.floor(totalSeconds/60);
@@ -80,6 +76,8 @@ function StartButton() {
   }
 
   const startRestTimer = (totalSeconds,roundsLeft) =>{
+    dispatch(incrementPercent(percentCompletePerSecond));
+    console.log(percentCompletePerSecond);
     let minutesOutput = Math.floor(totalSeconds/60);
     let secondsOutput = totalSeconds%60;
     if(secondsOutput<10){
@@ -138,7 +136,7 @@ function StartButton() {
   }
     return (
       <div className="StartButton">
-        <Button variant="contained" id="startButton" onClick={() => {startPomodoro(workTimer*60,rounds); handleProgressBar(workTimer,restTimer,rounds)}}>Start</Button>
+        <Button variant="contained" id="startButton" onClick={() => {startPomodoro(workTimer*60,rounds)}}>Start</Button>
         <Button variant="contained" id="stopButton" onClick={() => {stopTimer()}}>Reset</Button>
       </div>
     );
