@@ -1,4 +1,4 @@
-const restTimer = (state=1, action) => {
+const restTimer = (state=.25, action) => {
     switch(action.type){
         case 'increment rest':
             return state + 1

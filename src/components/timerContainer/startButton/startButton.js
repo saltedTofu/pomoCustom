@@ -18,99 +18,112 @@ function StartButton() {
 
   const calculatePercentComplete = () => {
     let totalTime = ((workTimer*60) + (restTimer*60))*rounds;
-    console.log(totalTime);
-    console.log((1/totalTime)*100);
     percentCompletePerSecond = (1/totalTime)*100;
   }
   const startPomodoro = (totalSeconds, roundsLeft) => {
     dispatch(resetPercent());
     document.getElementById("startButton").disabled = true;
     calculatePercentComplete();
-    startWorkTimer(totalSeconds, roundsLeft);
+    let end=Date.now()+((workTimer*60)*1000); //end date in ms
+    startWorkTimer(totalSeconds, roundsLeft, end);
   }
-  const startWorkTimer = (totalSeconds,roundsLeft) => {
+  const startWorkTimer = (totalSeconds,roundsLeft,end) => {
+    let current = Date.now();//current time in ms
+    let distanceInSeconds = ((end-current)/1000); //time left in seconds
+    let minutes = Math.trunc(distanceInSeconds/60);
+    if(minutes<0){
+      minutes=0;
+    }
+    let seconds = Math.trunc(distanceInSeconds-(minutes*60));
+    if(seconds<0){
+      seconds=0;
+    }
     dispatch(incrementPercent(percentCompletePerSecond));
-    console.log(percentCompletePerSecond);
     document.getElementById('roundTag').innerHTML=`round ${rounds-roundsLeft+1}`;
     document.getElementById('currentPhaseTag').innerHTML='working...';
-    let minutesOutput = Math.floor(totalSeconds/60);
-    let secondsOutput = totalSeconds%60;
-    if(secondsOutput<10){
-      document.title = `Work ${minutesOutput}:0${secondsOutput}`;
+    if(seconds<10){
+      document.title = `Work ${minutes}:0${seconds}`;
     }
     else{
-      document.title = `Work ${minutesOutput}:${secondsOutput}`;
+      document.title = `Work ${minutes}:${seconds}`;
     }
     let outputString='';
-    if(minutesOutput<10){
-      if(secondsOutput<10){
-        outputString=`0${minutesOutput}:0${secondsOutput}`;
+    if(minutes<10){
+      if(seconds<10){
+        outputString=`0${minutes}:0${seconds}`;
       }
       else{
-        outputString=`0${minutesOutput}:${secondsOutput}`;
+        outputString=`0${minutes}:${seconds}`;
       }
     }
     else{
-      if(secondsOutput<10){
-        outputString=`${minutesOutput}:0${secondsOutput}`;
+      if(seconds<10){
+        outputString=`${minutes}:0${seconds}`;
       }
       else{
-        outputString=`${minutesOutput}:${secondsOutput}`;
+        outputString=`${minutes}:${seconds}`;
       }
     }
     document.getElementById("runningTimerOutput").innerHTML = outputString;
     return new Promise((resolve) => {
-      setTimeout(resolve, 1000);
+      setTimeout(resolve, 10);
     })
     .then(()=>{
-      if(totalSeconds===0){
+      if(end-current<=0){
         if(document.querySelector('#alarmCheckbox').checked!==true){
           ding.play();
         }
         dispatch(changeToRest());
-        startRestTimer(restTimer*60,roundsLeft);
+        startRestTimer(restTimer*60,roundsLeft,Date.now()+((restTimer*60)*1000));
       }
       else{
-        startWorkTimer(totalSeconds-1,roundsLeft);
+        startWorkTimer(totalSeconds-1,roundsLeft,end);
       }
     })
   }
 
-  const startRestTimer = (totalSeconds,roundsLeft) =>{
+  const startRestTimer = (totalSeconds,roundsLeft,end) =>{
+    let current = Date.now();//current time in ms
+    let distanceInSeconds = ((end-current)/1000); //time left in seconds
+    let minutes = Math.trunc(distanceInSeconds/60);
+    if(minutes<0){
+      minutes=0;
+    }
+    let seconds = Math.trunc(distanceInSeconds-(minutes*60));
+    if(seconds<0){
+      seconds=0;
+    }
     dispatch(incrementPercent(percentCompletePerSecond));
-    console.log(percentCompletePerSecond);
-    let minutesOutput = Math.floor(totalSeconds/60);
-    let secondsOutput = totalSeconds%60;
-    if(secondsOutput<10){
-      document.title = `Rest ${minutesOutput}:0${secondsOutput}`;
+    if(seconds<10){
+      document.title = `Rest ${minutes}:0${seconds}`;
     }
     else{
-      document.title = `Rest ${minutesOutput}:${secondsOutput}`;
+      document.title = `Rest ${minutes}:${seconds}`;
     }
     let outputString='';
-    if(minutesOutput<10){
-      if(secondsOutput<10){
-        outputString=`0${minutesOutput}:0${secondsOutput}`;
+    if(minutes<10){
+      if(seconds<10){
+        outputString=`0${minutes}:0${seconds}`;
       }
       else{
-        outputString=`0${minutesOutput}:${secondsOutput}`;
+        outputString=`0${minutes}:${seconds}`;
       }
     }
     else{
-      if(secondsOutput<10){
-        outputString=`${minutesOutput}:0${secondsOutput}`;
+      if(seconds<10){
+        outputString=`${minutes}:0${seconds}`;
       }
       else{
-        outputString=`${minutesOutput}:${secondsOutput}`;
+        outputString=`${minutes}:${seconds}`;
       }
     }
     document.getElementById("runningTimerOutput").innerHTML = outputString;
     document.getElementById('currentPhaseTag').innerHTML='resting...';
     return new Promise((resolve) => {
-      setTimeout(resolve, 1000);
+      setTimeout(resolve, 10);
     })
     .then(()=>{
-      if(totalSeconds===0){
+      if(end-current<=0){
         if(document.querySelector('#alarmCheckbox').checked!==true){
           ding.play();
         }
@@ -124,11 +137,11 @@ function StartButton() {
           return;
         }
         else{
-          startWorkTimer(workTimer*60,roundsLeft-1);
+          startWorkTimer(workTimer*60,roundsLeft-1,Date.now()+((workTimer*60)*1000));
         }
       }
       else{
-        startRestTimer(totalSeconds-1,roundsLeft);
+        startRestTimer(totalSeconds-1,roundsLeft,end);
       }
     })
   }
