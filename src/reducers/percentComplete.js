@@ -1,7 +1,7 @@
 const percentComplete = (state=0, action) => {
     switch(action.type){
-        case 'increment percent':
-            return state+action.payload
+        case 'set percent':
+            return action.payload
         case 'reset percent':
             return 0
         default:

@@ -1,6 +1,6 @@
 import {useSelector, useDispatch} from 'react-redux';
 import {useState} from 'react';
-import {changeToWork,changeToRest,incrementPercent,resetPercent} from '../../../actions/index';
+import {changeToWork,changeToRest,setPercent,resetPercent} from '../../../actions/index';
 import alarmSound from '../../../utils/alarm.wav';
 import Button from '@mui/material/Button';
 import './startButton.css';
@@ -9,28 +9,29 @@ let ding = new Audio(alarmSound);
 
 
 function StartButton() { 
-  let percentCompletePerSecond = 0;
+  let start=0;
+  let endDate=0;
+  let totalTime=0;
   const workTimer = useSelector(state => state.workTimer);
   const restTimer = useSelector(state => state.restTimer);
   const rounds = useSelector(state => state.rounds);
   const theme = useSelector(state => state.theme);
   const dispatch = useDispatch();
 
-  const calculatePercentComplete = () => {
-    let totalTime = ((workTimer*60) + (restTimer*60))*rounds;
-    percentCompletePerSecond = (1/totalTime)*100;
-  }
   const startPomodoro = (totalSeconds, roundsLeft) => {
     dispatch(resetPercent());
     document.getElementById("startButton").disabled = true;
-    calculatePercentComplete();
-    let end=Date.now()+((workTimer*60)*1000); //end date in ms
-    startWorkTimer(totalSeconds, roundsLeft, end);
+    start = Date.now();
+    endDate=Date.now()+(((workTimer*60)+(restTimer*60))*rounds)*1000; //end date in ms
+    totalTime = endDate-start; //total time in ms for all rotations
+    startWorkTimer(totalSeconds, roundsLeft, Date.now()+((workTimer*60)*1000));
   }
   const startWorkTimer = (totalSeconds,roundsLeft,end) => {
     let current = Date.now();//current time in ms
     let distanceInSeconds = ((end-current)/1000); //time left in seconds
     let minutes = Math.trunc(distanceInSeconds/60);
+    let percentComplete = (current-start)/totalTime;
+    dispatch(setPercent(percentComplete));
     if(minutes<0){
       minutes=0;
     }
@@ -38,7 +39,6 @@ function StartButton() {
     if(seconds<0){
       seconds=0;
     }
-    dispatch(incrementPercent(percentCompletePerSecond));
     document.getElementById('roundTag').innerHTML=`round ${rounds-roundsLeft+1}`;
     document.getElementById('currentPhaseTag').innerHTML='working...';
     if(seconds<10){
@@ -86,6 +86,8 @@ function StartButton() {
     let current = Date.now();//current time in ms
     let distanceInSeconds = ((end-current)/1000); //time left in seconds
     let minutes = Math.trunc(distanceInSeconds/60);
+    let percentComplete = (current-start)/totalTime;
+    dispatch(setPercent(percentComplete));
     if(minutes<0){
       minutes=0;
     }
@@ -93,7 +95,6 @@ function StartButton() {
     if(seconds<0){
       seconds=0;
     }
-    dispatch(incrementPercent(percentCompletePerSecond));
     if(seconds<10){
       document.title = `Rest ${minutes}:0${seconds}`;
     }

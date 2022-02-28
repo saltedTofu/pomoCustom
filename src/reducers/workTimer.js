@@ -1,4 +1,4 @@
-const workTimer = (state=.25, action) => {
+const workTimer = (state=15, action) => {
     switch(action.type){
         case 'increment work':
             return state + 1

@@ -6,9 +6,9 @@ export const setTheme = (selectedTheme) => {
     }
 }
 //increment percent complete
-export const incrementPercent = (number) => {
+export const setPercent = (number) => {
     return{
-        type:'increment percent',
+        type:'set percent',
         payload:number
     }
 }
