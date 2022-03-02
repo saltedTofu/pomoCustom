@@ -1,3 +1,9 @@
+//disable buttons
+export const switchButtons = () => {
+    return{
+        type: 'switch button status'
+    }
+}
 //change theme
 export const setTheme = (selectedTheme) => {
     return{

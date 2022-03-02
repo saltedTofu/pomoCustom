@@ -6,6 +6,7 @@ import './restTimer.css';
 
 function RestTimer() {
   const timer = useSelector(state => state.restTimer);
+  const buttonStatus = useSelector(state => state.buttonStatus);
   const dispatch = useDispatch();
 
   const handleNumberInput = (value) => {
@@ -20,6 +21,7 @@ function RestTimer() {
       <div className="RestTimer">
         <Typography variant="h4">rest</Typography>
         <TextField 
+          disabled={buttonStatus}
           type="number" 
           id="restInput" 
           value={timer} 

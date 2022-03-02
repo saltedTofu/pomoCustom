@@ -6,6 +6,7 @@ import './rounds.css';
 
 function Rounds() {
   const rounds = useSelector(state => state.rounds);
+  const buttonStatus = useSelector(state => state.buttonStatus);
   const dispatch = useDispatch();
 
   const handleNumberInput = (value) => {
@@ -19,6 +20,7 @@ function Rounds() {
       <div className="Rounds">
         <Typography variant="h4">rounds</Typography>
         <TextField 
+          disabled={buttonStatus}
           type="number" 
           id="roundInput" 
           value={rounds} 

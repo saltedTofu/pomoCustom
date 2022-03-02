@@ -4,7 +4,7 @@ import rounds from './rounds';
 import currentPhase from './currentPhase';
 import percentComplete from './percentComplete';
 import theme from './theme';
-
+import buttonStatus from './buttonStatus';
 import {combineReducers} from 'redux';
 
 const rootReducer = combineReducers({
@@ -13,7 +13,8 @@ const rootReducer = combineReducers({
     rounds,
     currentPhase,
     percentComplete,
-    theme
+    theme,
+    buttonStatus
 });
 
 export default rootReducer;

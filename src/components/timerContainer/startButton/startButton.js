@@ -1,6 +1,5 @@
 import {useSelector, useDispatch} from 'react-redux';
-import {useState} from 'react';
-import {changeToWork,changeToRest,setPercent,resetPercent} from '../../../actions/index';
+import {changeToWork,changeToRest,setPercent,resetPercent, switchButtons} from '../../../actions/index';
 import alarmSound from '../../../utils/alarm.wav';
 import Button from '@mui/material/Button';
 import './startButton.css';
@@ -16,11 +15,12 @@ function StartButton() {
   const restTimer = useSelector(state => state.restTimer);
   const rounds = useSelector(state => state.rounds);
   const theme = useSelector(state => state.theme);
+  const buttonStatus = useSelector(state => state.buttonStatus);
   const dispatch = useDispatch();
 
   const startPomodoro = (totalSeconds, roundsLeft) => {
     dispatch(resetPercent());
-    document.getElementById("startButton").disabled = true;
+    dispatch(switchButtons());
     start = Date.now();
     endDate=Date.now()+(((workTimer*60)+(restTimer*60))*rounds)*1000; //end date in ms
     totalTime = endDate-start; //total time in ms for all rotations
@@ -151,7 +151,7 @@ function StartButton() {
   }
     return (
       <div className="StartButton">
-        <Button variant="contained" id="startButton" onClick={() => {startPomodoro(workTimer*60,rounds)}}>Start</Button>
+        <Button disabled = {buttonStatus} variant="contained" id="startButton" onClick={() => {startPomodoro(workTimer*60,rounds)}}>Start</Button>
         <Button variant="contained" id="stopButton" onClick={() => {stopTimer()}}>Reset</Button>
       </div>
     );

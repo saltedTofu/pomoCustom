@@ -2,11 +2,11 @@ import {useSelector, useDispatch} from 'react-redux';
 import {typeWork} from '../../../../actions/index';
 import TextField from '@mui/material/TextField';
 import { Typography } from '@mui/material';
-import Input from '@mui/material/Input';
 import './workTimer.css';
 
 function WorkTimer() {
   const timer = useSelector(state => state.workTimer);
+  const buttonStatus = useSelector(state => state.buttonStatus);
   const dispatch = useDispatch();
   
   const handleNumberInput = (value) => {
@@ -20,6 +20,7 @@ function WorkTimer() {
       <div className="WorkTimer">
         <Typography variant="h4">work</Typography>
         <TextField
+          disabled={buttonStatus}
           type="number" 
           id="workInput" 
           value={timer} 

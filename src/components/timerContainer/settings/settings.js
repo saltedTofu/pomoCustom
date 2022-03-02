@@ -13,6 +13,7 @@ function Settings() {
   const theme = useSelector(state => state.theme);
   const workTimer = useSelector(state => state.workTimer);
   const restTimer = useSelector(state => state.restTimer);
+  const buttonStatus = useSelector(state => state.buttonStatus);
   const dispatch = useDispatch();
 
     return (
@@ -20,27 +21,27 @@ function Settings() {
           <div className="outerTimer">
             <WorkTimer />
             <div className="arrows">
-              <Button onClick={() => {dispatch(incrementWork())}} startIcon={<ArrowUpwardIcon/>}>
+              <Button disabled={buttonStatus} onClick={() => {dispatch(incrementWork())}} startIcon={<ArrowUpwardIcon/>}>
               </Button>
-              <Button onClick={() => {dispatch(decrementWork())}} startIcon={<ArrowDownwardIcon/>}>
+              <Button disabled={buttonStatus} onClick={() => {dispatch(decrementWork())}} startIcon={<ArrowDownwardIcon/>}>
               </Button>
             </div>
           </div>
           <div className="outerTimer">
             <RestTimer />
             <div className="arrows">
-              <Button onClick={() => {dispatch(incrementRest())}} startIcon={<ArrowUpwardIcon/>}>
+              <Button disabled={buttonStatus} onClick={() => {dispatch(incrementRest())}} startIcon={<ArrowUpwardIcon/>}>
               </Button>
-              <Button onClick={() => {dispatch(decrementRest())}} startIcon={<ArrowDownwardIcon/>}>
+              <Button disabled={buttonStatus} onClick={() => {dispatch(decrementRest())}} startIcon={<ArrowDownwardIcon/>}>
               </Button>
             </div>
           </div>
           <div className="outerTimer">
             <Rounds />
             <div className="arrows">
-              <Button onClick={() => {dispatch(incrementRounds())}} startIcon={<ArrowUpwardIcon/>}>
+              <Button disabled={buttonStatus} onClick={() => {dispatch(incrementRounds())}} startIcon={<ArrowUpwardIcon/>}>
               </Button>
-              <Button onClick={() => {dispatch(decrementRounds())}} startIcon={<ArrowDownwardIcon/>}>
+              <Button disabled={buttonStatus} onClick={() => {dispatch(decrementRounds())}} startIcon={<ArrowDownwardIcon/>}>
               </Button>
             </div>
           </div>
