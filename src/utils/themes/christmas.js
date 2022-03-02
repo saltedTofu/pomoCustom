@@ -4,15 +4,15 @@ const christmas = createTheme({
   palette: {
     mode:"dark",
     background:{
-      paper:'#d50000', //red
+      paper:'#00600f', //green
     },
     text: {
       primary:'#fafafa' //white
     },
-    primary: {
-      light: '#ff5131',
-      main: '#d50000', //red
-      dark: '#9b0000',
+    primary: { //color of buttons, checkbox
+      light: '#ff7961',
+      main: '#f44336', //red
+      dark: '#ba000d',
       contrastText: '#fafafa', //white
     },
     secondary: {

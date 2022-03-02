@@ -20,6 +20,7 @@ function Title() {
       <ToggleButtonGroup 
         id="themeButtons"
         exclusive
+        color="primary"
         onChange={e=>handleThemeChange(e.target.value)}
         variant="contained"
         value={theme}

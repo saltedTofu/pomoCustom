@@ -4,22 +4,23 @@ const lofi = createTheme({
   palette: {
     mode:"dark",
     background:{
-      paper:'#673ab7'
+      paper:'#673ab7' //purple
     },
     text: {
-      primary:'#212121' //black
+      primary:'#fafafa', //white
+      secondary: '#212121'
     },
-    primary: {
-      light: '#df78ef',
-      main: '#ab47bc',
-      dark: '#790e8b',
+    primary: { //color of buttons, checkbox
+      light: '#88ffff',
+      main: '#4dd0e1', //light blue
+      dark: '#009faf',
+      contrastText: '#121212', //white
+    },
+    secondary: { 
+      light: '#9a67ea',
+      main: '#673ab7', //purple
+      dark: '#320b86',
       contrastText: '#fafafa', //white
-    },
-    secondary: {
-      light: '#ff94c2',
-      main: '#f06292',
-      dark: '#ba2d65',
-      contrastText: '#fafafa',
     }
   },
 });

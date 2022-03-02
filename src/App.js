@@ -22,21 +22,10 @@ function App() {
       return christmasTheme;
     }
   }
-  const changeBg = () =>{
-    if(theme==='lofi'){
-      return 'purple'; //purple
-    }
-    else if(theme==='dark'){
-      return '#212121'; //black
-    }
-    else if(theme==='christmas'){
-      return '#388e3c'; //green
-    }
-  }
 
   return (
     <ThemeProvider theme={changeTheme()}>
-      <Box className="App" bgcolor={changeBg()}>
+      <Box className="App" bgcolor="#212121">
         <Title />
         <TimerContainer />
       </Box>
