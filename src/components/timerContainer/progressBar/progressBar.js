@@ -8,6 +8,9 @@ function ProgressBar() {
   const percentComplete = useSelector(state => state.percentComplete);
   const theme = useSelector(state => state.theme);
   const [icon,setIcon] = useState(Tomato);
+
+
+
   useEffect(()=>{
     if(theme==='dark'){
       setIcon(Tomato);
@@ -23,7 +26,7 @@ function ProgressBar() {
     return (
       <svg className="ProgressBar" width="660px" height="200px">
         <path id="curve" d="M 60 100 L 610 100 Z" stroke="white"></path>
-        <image id="character" href={icon} width="100" height="100" x={(550*percentComplete)} y="50"></image>
+        <image id="character" href={icon} width="100px" height="100px" x={(550*percentComplete)} y="50" transform={`rotate(${percentComplete*3600}, ${50+(percentComplete*550)}, 100)`}></image>
       </svg>
     );
   }
