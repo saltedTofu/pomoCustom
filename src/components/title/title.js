@@ -7,24 +7,39 @@ import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import './title.css';
 import { Typography } from '@mui/material';
 import Card from '@mui/material/Card';
+import Paper from '@mui/material/Paper';
 import Zoom from '@mui/material/Zoom';
-import image from '../../utils/tomato.png';
+import Link from '@mui/material/Link';
 
 function Title() {
   const theme = useSelector(state => state.theme);
   const [about,setAbout] = useState(false);
+  const [display,setDisplay] = useState('none');
+
   const dispatch = useDispatch();
   const handleThemeChange = (selectedTheme) => {
     dispatch(setTheme(selectedTheme));
   }
   const handleAbout = () => {
     setAbout(!about);
+    if(display=="none"){
+      setDisplay('block');
+    }
+    else{
+      setDisplay('none');
+    }
   }
   const MyComponent = React.forwardRef((props, ref) => {
     return (
-      <Card ref={ref} {...props}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </Card>
+        <Paper sx={{display: display}} id="aboutSection" ref={ref} {...props}>
+          <Typography>
+            Pomodoro (Italian for tomato) is a study technique that takes advantage of switching between work periods and break  periods to maximize focus and minimize distractions. The timer below allows you to customize the length of your work and rest intervals and set the total number of rounds. The typical breakdown is 4 rounds with 25 minute work periods followed by 5-10 minute break periods. 
+          </Typography>
+          <Link href="https://en.wikipedia.org/wiki/Pomodoro_Technique" target="_blank">Learn More about Pomodoro</Link>
+          <Typography>
+            Pick a theme that fits your study mood, and you can also copy and paste a YouTube URL at the bottom of the page to embed whatever kind of videos help you study, (I’m a big fan of Lofi music streams personally). Happy Studying!
+          </Typography>
+        </Paper>
     );
   })
   
