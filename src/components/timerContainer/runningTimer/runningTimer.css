@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width:80%;
+    width:65%;
     min-width:660px;
     height:100%;
     margin:2%;
@@ -20,7 +20,5 @@
     display:flex;
     justify-content: center;
     align-items: center;
-}
-.timerOutputs{
-    padding-top:2.5%;
+    padding:0.5%;
 }

@@ -13,9 +13,15 @@ function RunningTimer() {
     return (
       <Paper className="RunningTimer" elevation={24}>
           <div id="timers">
-            <Typography className="timerOutputs" id="roundTag" variant="h3">round 1</Typography>
-            <Typography className="timerOutputs" id="runningTimerOutput" variant="h1">{`${workTimer}:00`}</Typography>
-            <Typography className="timerOutputs" id="currentPhaseTag" variant="h3">{currentPhase}ing...</Typography>
+            <Paper sx={{padding:"1%"}} elevation={10}>
+              <Typography className="timerOutputs" id="roundTag" variant="h3">round 1</Typography>
+            </Paper>
+            <Paper sx={{padding:"1%"}} elevation={10}>
+              <Typography className="timerOutputs" id="runningTimerOutput" variant="h1">{`${workTimer}:00`}</Typography>
+            </Paper>
+            <Paper sx={{padding:"1%"}} elevation={10}>
+              <Typography className="timerOutputs" id="currentPhaseTag" variant="h3">{currentPhase}ing...</Typography>
+            </Paper>
           </div>
           <div id="checkBoxes">
             <Checkbox name="disableAlarm" id="alarmCheckbox"/>
