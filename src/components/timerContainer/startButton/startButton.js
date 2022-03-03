@@ -151,8 +151,8 @@ function StartButton() {
   }
     return (
       <div className="StartButton">
-        <Button disabled = {buttonStatus} variant="contained" id="startButton" onClick={() => {startPomodoro(workTimer*60,rounds)}}>Start</Button>
-        <Button variant="contained" id="stopButton" onClick={() => {stopTimer()}}>Reset</Button>
+        <Button disabled = {buttonStatus} variant="contained" id="startButton" onClick={() => {startPomodoro(workTimer*60,rounds)}}>start</Button>
+        <Button variant="contained" id="stopButton" onClick={() => {stopTimer()}}>reset</Button>
       </div>
     );
   }

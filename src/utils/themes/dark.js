@@ -1,6 +1,21 @@
 import { createTheme } from '@mui/material/styles';
 
 const dark = createTheme({
+    components:{
+        MuiButton:{
+            styleOverrides:{
+                root:{
+                    fontSize:'2.5rem',
+                    fontFamily:"Roboto"
+                }
+            }
+        }
+    },
+    typography:{
+        button:{
+            textTransform:"none"
+        }
+    },
     palette: {
         mode:"dark",
         text: {

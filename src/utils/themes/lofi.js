@@ -1,6 +1,21 @@
 import { createTheme } from '@mui/material/styles';
 
 const lofi = createTheme({
+  components:{
+    MuiButton:{
+        styleOverrides:{
+            root:{
+                fontSize:'2.5rem',
+                fontFamily:"Roboto"
+            }
+        }
+    }
+},
+typography:{
+    button:{
+        textTransform:"none"
+    }
+},
   palette: {
     mode:"dark",
     background:{
@@ -8,7 +23,7 @@ const lofi = createTheme({
     },
     text: {
       primary:'#fafafa', //white
-      secondary: '#212121'
+      secondary: '#fafafa'
     },
     primary: { //color of buttons, checkbox
       light: '#88ffff',

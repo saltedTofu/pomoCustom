@@ -45,8 +45,8 @@ function Title() {
   
   return (
     <div className="Title">
-      <Typography variant="h2" color="textPrimary" mt={1} mb={3}>pomodoro</Typography>
-      <Button variant="contained" onClick={()=>{handleAbout()}}>About</Button>
+      <Typography variant="h1" color="textPrimary" mt={1} mb={3}>pomodoro</Typography>
+      <Button sx={{fontSize:"1rem"}} variant="contained" onClick={()=>{handleAbout()}}>about</Button>
       <Zoom in={about}>
         <MyComponent />
       </Zoom>
@@ -58,9 +58,9 @@ function Title() {
         variant="contained"
         value={theme}
       >
-        <ToggleButton value="dark">Dark</ToggleButton>
-        <ToggleButton value="lofi">Lofi</ToggleButton>
-        <ToggleButton value="christmas">Christmas</ToggleButton>
+        <ToggleButton value="dark">dark</ToggleButton>
+        <ToggleButton value="lofi">lofi</ToggleButton>
+        <ToggleButton value="christmas">christmas</ToggleButton>
       </ToggleButtonGroup>
     </div>
   );

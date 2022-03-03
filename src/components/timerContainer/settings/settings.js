@@ -4,6 +4,7 @@ import Rounds from './rounds/rounds';
 import {useSelector, useDispatch} from 'react-redux';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import {incrementWork, decrementWork, incrementRest, decrementRest, incrementRounds, decrementRounds} from '../../../actions/index'
@@ -17,35 +18,40 @@ function Settings() {
   const dispatch = useDispatch();
 
     return (
-      <Paper className="Settings" elevation={24}>
+      <Paper sx={{marginTop:".8%"}}className="Settings" elevation={24}>
           <div className="outerTimer">
             <WorkTimer />
             <div className="arrows">
-              <Button disabled={buttonStatus} onClick={() => {dispatch(incrementWork())}} startIcon={<ArrowUpwardIcon/>}>
-              </Button>
-              <Button disabled={buttonStatus} onClick={() => {dispatch(decrementWork())}} startIcon={<ArrowDownwardIcon/>}>
-              </Button>
+              <IconButton size="large" disabled={buttonStatus} onClick={() => {dispatch(incrementWork())}} aria-label="increase">
+                <ArrowUpwardIcon/>
+              </IconButton>
+              <IconButton size="large" disabled={buttonStatus} onClick={() => {dispatch(decrementWork())}} aria-label="decrease">
+                <ArrowDownwardIcon/>
+              </IconButton>
             </div>
           </div>
           <div className="outerTimer">
             <RestTimer />
             <div className="arrows">
-              <Button disabled={buttonStatus} onClick={() => {dispatch(incrementRest())}} startIcon={<ArrowUpwardIcon/>}>
-              </Button>
-              <Button disabled={buttonStatus} onClick={() => {dispatch(decrementRest())}} startIcon={<ArrowDownwardIcon/>}>
-              </Button>
+              <IconButton size="large" disabled={buttonStatus} onClick={() => {dispatch(incrementRest())}} aria-label="increase">
+                <ArrowUpwardIcon/>
+              </IconButton>
+              <IconButton size="large" disabled={buttonStatus} onClick={() => {dispatch(decrementRest())}} aria-label="decrease">
+                <ArrowDownwardIcon/>
+              </IconButton>
             </div>
           </div>
           <div className="outerTimer">
             <Rounds />
             <div className="arrows">
-              <Button disabled={buttonStatus} onClick={() => {dispatch(incrementRounds())}} startIcon={<ArrowUpwardIcon/>}>
-              </Button>
-              <Button disabled={buttonStatus} onClick={() => {dispatch(decrementRounds())}} startIcon={<ArrowDownwardIcon/>}>
-              </Button>
+              <IconButton size="large" disabled={buttonStatus} onClick={() => {dispatch(incrementRounds())}} aria-label="increase">
+                <ArrowUpwardIcon/>
+              </IconButton>
+              <IconButton size="large" disabled={buttonStatus} onClick={() => {dispatch(decrementRounds())}} aria-label="decrease">
+                <ArrowDownwardIcon/>
+              </IconButton>
             </div>
           </div>
-         
       </Paper>
     );
   }
