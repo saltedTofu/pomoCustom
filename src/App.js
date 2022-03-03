@@ -13,6 +13,7 @@ function App() {
 
   const changeTheme = () => {
     if(theme==='lofi'){
+
       return lofiTheme;
     }
     else if(theme==='dark'){
@@ -23,9 +24,21 @@ function App() {
     }
   }
 
+  const changeBg = () =>{
+    if(theme==='lofi'){
+      return '#320b86'; //purple
+    }
+    else if(theme==='dark'){
+      return '#212121'; //black
+    }
+    else if(theme==='christmas'){
+      return '#00600f'; //green
+    }
+  }
+
   return (
     <ThemeProvider theme={changeTheme()}>
-      <Box className="App" bgcolor="#212121">
+      <Box className="App" bgcolor={changeBg()}>
         <Title />
         <TimerContainer />
       </Box>

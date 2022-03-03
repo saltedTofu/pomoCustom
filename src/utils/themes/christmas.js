@@ -4,18 +4,18 @@ const christmas = createTheme({
   palette: {
     mode:"dark",
     background:{
-      paper:'#00600f', //green
+      paper:'#388e3c', //green
     },
     text: {
       primary:'#fafafa' //white
     },
     primary: { //color of buttons, checkbox
-      light: '#ff7961',
-      main: '#f44336', //red
-      dark: '#ba000d',
+      light: '#ff6f60',
+      main: '#e53935', //red
+      dark: '#ab000d',
       contrastText: '#fafafa', //white
     },
-    secondary: {
+    secondary: { //green
       light: '#6abf69',
       main: '#388e3c',
       dark: '#00600f',
