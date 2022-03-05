@@ -11,3 +11,9 @@
 #stopButton{
     margin-left:5%;
 }
+
+@media only screen and (max-width: 900px){
+    .StartButton{
+        margin-bottom:6%;
+    }
+  }

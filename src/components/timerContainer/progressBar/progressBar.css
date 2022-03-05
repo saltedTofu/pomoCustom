@@ -1,0 +1,9 @@
+#progressBar{
+    margin:5% 5%;
+}
+
+@media only screen and (max-width: 800px){
+    #progressBar{
+        margin: 0;
+    }
+  }

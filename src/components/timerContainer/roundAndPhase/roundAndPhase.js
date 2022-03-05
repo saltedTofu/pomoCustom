@@ -1,7 +1,6 @@
 import {useSelector} from 'react-redux';
 import Chip from '@mui/material/Chip';
 import Checkbox from '@mui/material/Checkbox';
-import Paper from '@mui/material/Paper';
 import './roundAndPhase.css';
 import { Typography } from '@mui/material';
 import { useEffect, useState } from 'react';

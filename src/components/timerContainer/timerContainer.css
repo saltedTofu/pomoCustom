@@ -5,3 +5,36 @@
     align-items: center;
     height:100%;
 }
+#inputAndTimer{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content: space-around;
+    width:65%;
+    padding:2% 2%;
+}
+#settingsAndStart{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 800px){
+    #inputAndTimer{
+        flex-direction:column;
+        width:65%;
+    }
+  }
+  
+  @media only screen and (max-width: 1300px){
+    #inputAndTimer{
+        width:75%;
+    }
+  }
+  @media only screen and (max-width: 1100px){
+    #inputAndTimer{
+        width:90%;
+    }
+  }
+    

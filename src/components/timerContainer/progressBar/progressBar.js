@@ -28,7 +28,7 @@ function ProgressBar() {
   },[theme])
 
     return (
-        <svg width="660px" height="200px" >
+        <svg width="660px" height="200px" id="progressBar">
           <path id="curve" d="M 60 100 L 610 100 Z" stroke="white"></path>
           <image id="character" href={icon} width="200px" height="200px" x={(550*percentComplete)} y="0" transform={`rotate(${percentComplete*3600}, ${100+(percentComplete*550)}, 100)`}></image>
         </svg>

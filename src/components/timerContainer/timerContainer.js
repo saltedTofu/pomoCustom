@@ -3,15 +3,19 @@ import StartButton from './startButton/startButton';
 import RunningTimer from './runningTimer/runningTimer';
 import ProgressBar from './progressBar/progressBar';
 import EmbedYoutube from './embedYoutube/embedYoutube';
-import RoundAndPhase from './roundAndPhase/roundAndPhase';
+import Paper from '@mui/material/Paper';
 import './timerContainer.css';
 
 function TimerContainer() {
     return (
       <div className="TimerContainer">
-        <Settings />
-        <StartButton />
-        <RunningTimer />
+        <Paper id="inputAndTimer" elevation={2}>
+          <div id="settingsAndStart">
+            <Settings />
+            <StartButton />
+          </div>
+          <RunningTimer />
+        </Paper>
         <ProgressBar />
         <EmbedYoutube />
       </div>

@@ -18,7 +18,7 @@ function Settings() {
   const dispatch = useDispatch();
 
     return (
-      <Paper sx={{marginTop:".8%"}}className="Settings" elevation={10}>
+      <Paper className="Settings" elevation={10}>
           <div className="outerTimer">
             <WorkTimer />
             <div className="arrows">
