@@ -40,7 +40,6 @@ function StartButton() {
       seconds=0;
     }
     document.getElementById('roundTag').innerHTML=`round ${rounds-roundsLeft+1}`;
-    document.getElementById('currentPhaseTag').innerHTML='working...';
     if(seconds<10){
       document.title = `Work ${minutes}:0${seconds}`;
     }
@@ -119,7 +118,6 @@ function StartButton() {
       }
     }
     document.getElementById("runningTimerOutput").innerHTML = outputString;
-    document.getElementById('currentPhaseTag').innerHTML='resting...';
     return new Promise((resolve) => {
       setTimeout(resolve, 10);
     })
@@ -130,10 +128,9 @@ function StartButton() {
         }
         dispatch(changeToWork());
         if(roundsLeft===1){
-          document.title='finished!';
-          document.getElementById("runningTimerOutput").innerHTML ='finished!';
+          //document.title='finished!';
+          //document.getElementById("runningTimerOutput").innerHTML ='finished!';
           document.getElementById('roundTag').innerHTML='';
-          document.getElementById('currentPhaseTag').innerHTML='';
           document.getElementById("startButton").disabled = false;
           return;
         }

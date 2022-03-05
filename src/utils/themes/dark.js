@@ -14,6 +14,9 @@ const dark = createTheme({
     typography:{
         button:{
             textTransform:"none"
+        },
+        h1:{
+            fontSize:'12rem'
         }
     },
     palette: {

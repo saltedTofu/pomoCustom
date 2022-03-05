@@ -18,7 +18,7 @@ function WorkTimer() {
   }
     return (
       <div className="WorkTimer">
-        <Typography variant="h4">work</Typography>
+        <Typography variant="h5">work</Typography>
         <TextField
           disabled={buttonStatus}
           type="number" 

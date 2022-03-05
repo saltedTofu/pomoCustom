@@ -3,6 +3,7 @@ import StartButton from './startButton/startButton';
 import RunningTimer from './runningTimer/runningTimer';
 import ProgressBar from './progressBar/progressBar';
 import EmbedYoutube from './embedYoutube/embedYoutube';
+import RoundAndPhase from './roundAndPhase/roundAndPhase';
 import './timerContainer.css';
 
 function TimerContainer() {

@@ -45,7 +45,7 @@ function Title() {
   
   return (
     <div className="Title">
-      <Typography variant="h1" color="textPrimary" mt={1} mb={3}>pomodoro</Typography>
+      <Typography variant="h2" color="textPrimary" mt={1} mb={3}>pomodoro</Typography>
       <Button sx={{fontSize:"1rem"}} variant="contained" onClick={()=>{handleAbout()}}>about</Button>
       <Zoom in={about}>
         <MyComponent />

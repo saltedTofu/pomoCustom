@@ -19,7 +19,7 @@ function RestTimer() {
 
     return (
       <div className="RestTimer">
-        <Typography variant="h4">rest</Typography>
+        <Typography variant="h5">rest</Typography>
         <TextField 
           disabled={buttonStatus}
           type="number" 

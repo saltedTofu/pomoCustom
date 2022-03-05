@@ -18,7 +18,7 @@ function Rounds() {
   }
     return (
       <div className="Rounds">
-        <Typography variant="h4">rounds</Typography>
+        <Typography variant="h5">rounds</Typography>
         <TextField 
           disabled={buttonStatus}
           type="number" 
