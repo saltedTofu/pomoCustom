@@ -1,5 +1,5 @@
-# **Halo Callouts**
-### React App created to help players learn the names of locations on Halo 3 multiplayer maps.
+# **Pomodoro**
+### React App created for making custom Pomodoro timers to study or work with.
 [Link to Webpage](https://super-cool-site-by-saltedtofu.netlify.app/)
 ## Table of Contents
   - [Introduction](#introduction)
