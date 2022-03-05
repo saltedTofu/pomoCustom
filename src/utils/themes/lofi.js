@@ -12,9 +12,12 @@ const lofi = createTheme({
     }
 },
 typography:{
-    button:{
-        textTransform:"none"
-    }
+  button:{
+      textTransform:"none"
+  },
+  h1:{
+      fontSize:'12rem'
+  }
 },
   palette: {
     mode:"dark",
