@@ -6,7 +6,6 @@ import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import './title.css';
 import { Typography } from '@mui/material';
-import Card from '@mui/material/Card';
 import Paper from '@mui/material/Paper';
 import Zoom from '@mui/material/Zoom';
 import Link from '@mui/material/Link';

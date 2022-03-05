@@ -1,5 +1,4 @@
 import {useSelector} from 'react-redux';
-import Checkbox from '@mui/material/Checkbox';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import './runningTimer.css';

@@ -2,6 +2,13 @@ import { createTheme } from '@mui/material/styles';
 //https://material.io/resources/color/#!/?view.left=0&view.right=0&secondary.color=388E3C&primary.color=d50000&secondary.text.color=FAFAFA
 const christmas = createTheme({
   components:{
+    MuiChip:{
+      styleOverrides:{
+          outlined:{
+              border:`none`
+          }
+      }
+    },
     MuiButton:{
         styleOverrides:{
             root:{

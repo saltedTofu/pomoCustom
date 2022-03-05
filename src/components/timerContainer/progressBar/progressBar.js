@@ -4,7 +4,6 @@ import Tomato from '../../../utils/tomato.png';
 import Snowball from '../../../utils/snowball.png';
 import Cat from '../../../utils/cat.png';
 import Pig from '../../../utils/pig.png';
-import Finish from '../../../utils/finish.png';
 import { useEffect, useState } from 'react';
 
 function ProgressBar() {

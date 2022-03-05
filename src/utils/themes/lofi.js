@@ -2,6 +2,13 @@ import { createTheme } from '@mui/material/styles';
 
 const lofi = createTheme({
   components:{
+    MuiChip:{
+      styleOverrides:{
+          outlined:{
+              border:`none` //outlined border of chip
+          }
+      }
+    },
     MuiButton:{
         styleOverrides:{
             root:{
