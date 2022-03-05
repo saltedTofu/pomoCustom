@@ -28,16 +28,12 @@ typography:{
       primary:'#fafafa' //white
     },
     primary: { //color of buttons, checkbox
-      light: '#ff6f60',
-      main: '#e53935', //red
-      dark: '#ab000d',
-      contrastText: '#fafafa', //white
+      main: '#f44336', //red
+      contrastText: '#fafafa' //white
     },
     secondary: { //green
-      light: '#6abf69',
       main: '#388e3c',
-      dark: '#00600f',
-      contrastText: '#fafafa',
+      contrastText: '#fafafa'
     }
   },
 });

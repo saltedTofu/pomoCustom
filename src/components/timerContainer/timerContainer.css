@@ -4,6 +4,7 @@
     justify-content: flex-start;
     align-items: center;
     height:100%;
+    width:100%;
 }
 #inputAndTimer{
     display:flex;
@@ -27,14 +28,15 @@
     }
   }
   
-  @media only screen and (max-width: 1300px){
+
+@media only screen and (max-width: 1600px){
     #inputAndTimer{
-        width:75%;
+            width:85%;
+        }
     }
-  }
-  @media only screen and (max-width: 1100px){
+@media only screen and (max-width: 1300px){
     #inputAndTimer{
-        width:90%;
+            width:100%;
+        }
     }
-  }
     
