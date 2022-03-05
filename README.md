@@ -22,9 +22,9 @@
 - Redux is used for global state management
 - React hooks (useState) used for state needed in only one component, as well as useEffect for conditional renders
 ## Screenshots
- - default dark theme
+ - Default dark theme
 ![Example screenshot](./src/utils/darkThemeScreenshot.png)
- - progress bar and youtube embed
+ - Progress bar and youtube embed
 ![Example screenshot](./src/utils/progressAndEmbedScreenshot.png)
 ## Room for Improvement
 - Currently to restart the timer, the webpage needs to be refreshed entirely. I would like to add functionality so the user can stay in the same theme when refreshing.
