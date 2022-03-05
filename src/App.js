@@ -6,6 +6,7 @@ import { ThemeProvider } from '@emotion/react';
 import lofiTheme from './utils/themes/lofi.js';
 import darkTheme from './utils/themes/dark.js';
 import christmasTheme from './utils/themes/christmas.js';
+import millenialPinkTheme from './utils/themes/millenialPink.js';
 import Box from '@mui/material/Box';
 
 function App() {
@@ -13,7 +14,6 @@ function App() {
 
   const changeTheme = () => {
     if(theme==='lofi'){
-
       return lofiTheme;
     }
     else if(theme==='dark'){
@@ -21,6 +21,10 @@ function App() {
     }
     else if(theme==='christmas'){
       return christmasTheme;
+    }
+    else if(theme==='millenial pink'){
+      console.log(millenialPinkTheme);
+      return millenialPinkTheme;
     }
   }
 
@@ -33,6 +37,9 @@ function App() {
     }
     else if(theme==='christmas'){
       return '#00600f'; //green
+    }
+    else if(theme==='millenial pink'){
+      return '#ffd1dc'; //pink
     }
   }
 

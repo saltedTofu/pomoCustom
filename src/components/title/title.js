@@ -53,7 +53,6 @@ function Title() {
       <ToggleButtonGroup 
         id="themeButtons"
         exclusive
-        color="primary"
         onChange={e=>handleThemeChange(e.target.value)}
         variant="contained"
         value={theme}
@@ -61,6 +60,7 @@ function Title() {
         <ToggleButton value="dark">dark</ToggleButton>
         <ToggleButton value="lofi">lofi</ToggleButton>
         <ToggleButton value="christmas">christmas</ToggleButton>
+        <ToggleButton value="millenial pink">millenial pink</ToggleButton>
       </ToggleButtonGroup>
     </div>
   );

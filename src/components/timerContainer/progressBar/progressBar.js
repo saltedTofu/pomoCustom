@@ -3,9 +3,7 @@ import './progressBar.css';
 import Tomato from '../../../utils/tomato.png';
 import Snowball from '../../../utils/snowball.png';
 import Cat from '../../../utils/cat.png';
-import lofiCity from '../../../utils/loficity.png';
-import snowy from '../../../utils/snowy.jpg';
-import Paper from '@mui/material/Paper';
+import Pig from '../../../utils/pig.png';
 import { useEffect, useState } from 'react';
 
 function ProgressBar() {
@@ -24,6 +22,9 @@ function ProgressBar() {
     }
     else if(theme==='christmas'){
       setIcon(Snowball)
+    }
+    else if(theme==='millenial pink'){
+      setIcon(Pig);
     }
   },[theme])
 
