@@ -1,4 +1,4 @@
-const rounds = (state=1, action) => {
+const rounds = (state=4, action) => {
     switch(action.type){
         case 'increment round':
             return state + 1
