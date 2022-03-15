@@ -2,6 +2,13 @@ import { createTheme } from '@mui/material/styles';
 
 const dark = createTheme({
     components:{
+        MuiChip:{
+            styleOverrides:{
+                outlined:{
+                    border:`none`
+                }
+            }
+        },
         MuiButton:{
             styleOverrides:{
                 root:{
@@ -24,11 +31,11 @@ const dark = createTheme({
         text: {
             primary:'#fafafa', //white
         },
-        primary: {
+        primary: { //color of buttons
             light: '#ffffff',
             main: '#fafafa', //white
             dark: '#c7c7c7',
-            contrastText: '#673ab7',
+            contrastText: '#212121', //black
         },
         secondary: {
             light: '#484848',

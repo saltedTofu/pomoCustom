@@ -3,7 +3,6 @@ import RestTimer from './restTimer/restTimer';
 import Rounds from './rounds/rounds';
 import {useSelector, useDispatch} from 'react-redux';
 import Paper from '@mui/material/Paper';
-import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';

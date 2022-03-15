@@ -3,7 +3,7 @@
     flex-direction: row;
     justify-content: space-around;
     width:fit-content;
-    margin-top:2%;
+    margin-top:10%;
 }
 #startButton{
     margin-right:5%;
@@ -12,8 +12,24 @@
     margin-left:5%;
 }
 
-@media only screen and (max-width: 900px){
+@media only screen and (max-width: 800px){
     .StartButton{
         margin-bottom:6%;
     }
   }
+
+  @media only screen and (max-width: 1600px){
+    .StartButton{
+            margin-top:8%;;
+        }
+    }
+    @media only screen and (max-width: 1300px){
+        .StartButton{
+                margin-top:6.5%;;
+            }
+        }
+        @media only screen and (max-width:900px){
+            .StartButton{
+                    margin-top:4%;;
+                }
+            }

@@ -2,6 +2,13 @@ import { createTheme } from '@mui/material/styles';
 //https://material.io/resources/color/#!/?view.left=0&view.right=1&primary.color=FFD1DC&secondary.color=e4a199&secondary.text.color=000000&primary.text.color=e4a199
 const millenialPink = createTheme({
   components:{
+    MuiChip:{
+      styleOverrides:{
+          outlined:{
+              border:`none`
+          }
+      }
+    },
     MuiButton:{
         styleOverrides:{
             root:{

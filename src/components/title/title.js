@@ -6,7 +6,6 @@ import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import './title.css';
 import { Typography } from '@mui/material';
-import Card from '@mui/material/Card';
 import Paper from '@mui/material/Paper';
 import Zoom from '@mui/material/Zoom';
 import Link from '@mui/material/Link';
@@ -45,7 +44,7 @@ function Title() {
   
   return (
     <div className="Title">
-      <Typography variant="h2" color="textPrimary" mt={1} mb={3}>pomodoro</Typography>
+      <Typography variant="h2" color="textPrimary" mt={1} mb={3} sx={{color:'#fafafa'}}>pomodoro</Typography>
       <Button sx={{fontSize:"1rem"}} variant="contained" onClick={()=>{handleAbout()}}>about</Button>
       <Zoom in={about}>
         <MyComponent />
@@ -60,7 +59,7 @@ function Title() {
         <ToggleButton value="dark">dark</ToggleButton>
         <ToggleButton value="lofi">lofi</ToggleButton>
         <ToggleButton value="christmas">christmas</ToggleButton>
-        <ToggleButton value="millenial pink">millenial pink</ToggleButton>
+        <ToggleButton value="millenial pink">pink</ToggleButton>
       </ToggleButtonGroup>
     </div>
   );
