@@ -29,7 +29,7 @@ const dark = createTheme({
     palette: {
         mode:"dark",
         text: {
-            primary:'#fafafa', //white
+            primary:'#fafafa' //white, color of text
         },
         primary: { //color of buttons
             light: '#ffffff',
