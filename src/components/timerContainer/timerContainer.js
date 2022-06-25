@@ -9,13 +9,13 @@ import './timerContainer.css';
 function TimerContainer() {
     return (
       <div className="TimerContainer">
-        <Paper id="inputAndTimer" elevation={2}>
+        <div id="inputAndTimer" elevation={2}>
           <div id="settingsAndStart">
             <Settings />
             <StartButton />
           </div>
           <RunningTimer />
-        </Paper>
+        </div>
         <ProgressBar />
         <EmbedYoutube />
       </div>
